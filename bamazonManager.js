@@ -138,7 +138,7 @@ function displayOptions() {
                         connection.query(query, function (err, res) {
                             if (err) throw err;
 
-                            console.log(`You have successfully added ${item}`);
+                            console.log(`You have successfully added ${item}`);ç
                             connection.end();
                         })
                     })
