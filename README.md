@@ -37,7 +37,11 @@ A Node.js & MySQL command line Amazon-like storefront app that takes in customer
 	* This means updating the SQL database to reflect the remaining quantity.
 	* Once the update goes through, it will show the customer the total cost of their purchase.
 
+
+
 ---------------------------------
+
+
 
 ### Manager View 
 
@@ -57,7 +61,11 @@ A Node.js & MySQL command line Amazon-like storefront app that takes in customer
 
 	* If a manager selects `Add New Product`, it will allow the manager to add a completely new product to the store.
 	
+
+
 ---------------------------------
+
+
 	
 ## Built With
 
