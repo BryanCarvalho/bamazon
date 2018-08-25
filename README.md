@@ -56,3 +56,13 @@ A Node.js & MySQL command line Amazon-like storefront app that takes in customer
 	* If a manager selects `Add to Inventory`, It will display a prompt that will let the manager "add more" of any item currently in the store. 
 
 	* If a manager selects `Add New Product`, it will allow the manager to add a completely new product to the store.
+	
+---------------------------------
+	
+## Built With
+
+* [JavaScript]
+* [Node.js]
+* [NPM MySQL]
+* [NPM Inquirer]
+* [MySQL Workbench]
