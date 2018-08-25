@@ -4,7 +4,7 @@ A Node.js & MySQL command line Amazon-like storefront app that takes in customer
 
 #### Instructions:
 
-### Challenge #1: Customer View
+### Customer View
 
 1. Database is called `bamazon_db`.
 
