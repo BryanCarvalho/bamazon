@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
     port: 3306,
     user: "root",
     password: "password",
-    database: "bamazonDB"
+    database: "bamazon_db"
 });
 
 connection.connect(function (err) {
@@ -26,16 +26,12 @@ function validation(value) {
 function viewItem() {
     connection.query("SELECT * FROM products", function (err, res) {
         if (err) throw err;
-        console.log("***************************** INVENTORY ********************************")
+        console.log("****************************** INVENTORY ******************************")
         for (i = 0; i < res.length; i++) {
-            console.log('____________________________________________________')
-            console.log('Product ID : ' + res[i].item_id);
-            console.log('Product : ' + res[i].product_name);
-            console.log('Department : ' + res[i].department_name);
-            console.log('Price : ' + res[i].price);
-            console.log('Stock Quantity : ' + res[i].stock_quantity);
-            console.log('____________________________________________________')
+            console.log(`\nID: ${res[i].item_id}\n`, `Product Name: ${res[i].product_name}\n`, `Department: ${res[i].department_name}\n`, `Price: $${res[i].price}\n`, `Stock Quantity: ${res[i].stock_quantity}`);
+
         }
+        console.log(`\n-------------------`);
         connection.end();
     })
 }
@@ -62,17 +58,12 @@ function displayOptions() {
             else if (answers.menu === "View low inventory") {
                 connection.query("SELECT * FROM products", function (err, res) {
                     if (err) throw err;
-                    console.log("************************** LOW INVENTORY ********************************")
+                    console.log("****************************** LOW INVENTORY ******************************")
                     for (i = 0; i < res.length; i++) {
                         if (res[i].stock_quantity <= 5) {
-                            console.log('____________________________________________________')
-                            console.log('Product ID : ' + res[i].item_id);
-                            console.log('Product : ' + res[i].product_name);
-                            console.log('Department : ' + res[i].department_name);
-                            console.log('Price : ' + res[i].price);
-                            console.log('Stock Quantity : ' + res[i].stock_quantity);
-                            console.log('____________________________________________________')
+                            console.log(`\nID: ${res[i].item_id}\n`, `Product Name: ${res[i].product_name}\n`, `Department: ${res[i].department_name}\n`, `Price: $${res[i].price}\n`, `Stock Quantity: ${res[i].stock_quantity}`);
                         }
+                        console.log(`\n-------------------`);
                     }
                     connection.end();
                 })
@@ -105,8 +96,8 @@ function displayOptions() {
 
                             connection.query(query, function (err, res) {
                                 if (err) throw err;
-                                console.log("*********item added************");
-                                console.log("Product: " + product + " | " + amount + " added");
+                                console.log("****************************** ITEM ADDED ******************************");
+                                console.log(`\nProduct Name: ${product}\n`, `${amount} added`)
                             })
 
                             connection.end();
@@ -118,23 +109,23 @@ function displayOptions() {
                     {
                         name: 'name',
                         type: 'input',
-                        message: 'Input name of the product you wish to add',
+                        message: 'Enter name of the product you wish to add',
                     },
                     {
                         name: 'department',
                         type: 'input',
-                        message: 'Input the department of the product you wish to add',
+                        message: 'Enter the department of the product you wish to add',
                     },
                     {
                         name: 'price',
                         type: 'input',
-                        message: 'Input price of the product you wish to Add (Enter a number)',
+                        message: 'Enter price of the product you wish to add',
                         validate: validation
                     },
                     {
                         name: 'amount',
                         type: 'input',
-                        message: 'Input amount of the product you wish to Add (Enter a number)',
+                        message: 'Enter amount of the product you wish to add',
                         validate: validation
                     },
                 ])
@@ -147,7 +138,7 @@ function displayOptions() {
                         connection.query(query, function (err, res) {
                             if (err) throw err;
 
-                            console.log("You have successfully added " + item);
+                            console.log(`You have successfully added ${item}`);
                             connection.end();
                         })
                     })
