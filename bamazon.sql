@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS bamazon;
+DROP DATABASE IF EXISTS bamazon_db;
 
 CREATE DATABASE bamazon_db;
 
@@ -6,7 +6,7 @@ USE bamazon_db;
 
 CREATE TABLE products (
 	item_id INTEGER(10) AUTO_INCREMENT NOT NULL,
-	product_name VARCHAR(50) NOT NULL,
+	product_name VARCHAR(200) NOT NULL,
 	department_name VARCHAR(50) NOT NULL,
 	price DECIMAL(10,2) NOT NULL,
 	stock_quantity INTEGER(10) NOT NULL,
@@ -21,6 +21,6 @@ VALUES  ('Lean UX: Designing Great Products with Agile Teams Hardcover', 'Books'
 		('Deadpool 2 (Bilingual) [Blu-ray + Digital Copy]', 'Music, Movies, and TV Shows', 26.99, 500),
 		('Jurassic World: Fallen Kingdom [BD Combo Pack] [Blu-ray]', 'Music, Movies, and TV Shows', 25.99, 1000),
 		('Trick r Treat [Blu-ray]', 'Music, Movies, and TV Shows', 26.19, 500),
-		('Firefly: The Complete Series [Blu-ray]'), 'Electronics', 14.99, 250),
-		('Denon AH-MM400 Music Maniac Over-Ear Headphones'), 'Electronics', 374.90, 50),
-		('Logitech MX Master 2S Wireless Mouse, Graphite'), 'Electronics', 107.99, 100)
+		('Firefly: The Complete Series [Blu-ray]', 'Electronics', 14.99, 250),
+		('Denon AH-MM400 Music Maniac Over-Ear Headphones', 'Electronics', 374.90, 50),
+		('Logitech MX Master 2S Wireless Mouse, Graphite', 'Electronics', 107.99, 100)
